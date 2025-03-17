@@ -3,9 +3,23 @@ import PackageDescription
 
 let package = Package(
     name: "LearningSwiftSyntax",
+    dependencies: [],
     targets: [
         .executableTarget(
-            name: "LearningSwiftSyntax"
+            name: "ChallengeTask",
+            dependencies: []
+        ),
+        .testTarget(
+            name: "ChallengeTaskTests",
+            dependencies: ["ChallengeTask"]
+        ),
+        .executableTarget(
+            name: "EssentialTasks",
+            dependencies: []
+        ),
+        .testTarget(
+            name: "EssentialTasksTests",
+            dependencies: ["EssentialTasks"]
         ),
     ]
 )
