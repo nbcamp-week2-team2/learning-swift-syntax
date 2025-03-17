@@ -7,7 +7,7 @@
 
 import Foundation
 
-// 필수 문제 1
+// MARK: - 필수문제 1
 //- [ ]  두 개의 Int 값을 파라미터로 받고, 하나의 String 값을 반환하는 클로저를 설계해주세요.
 //- 클로저 내부에서는 두 정수를 더한 후, "두 수의 합은 {합계} 입니다"라는 문자열을 반환합니다.
 //- [ ]  이 클로저를 상수 sum에 저장하고, 정확한 타입을 명시해주세요.
@@ -29,7 +29,7 @@ func calculate(_ sum: (Int, Int) -> String) {
 calculate(sum)
 
 
-// 필수 문제 2
+// MARK: - 필수문제 2
 let numbers = [1, 2, 3, 4, 5]
 
 //아래 forEach 문을 map 을 사용하는 코드로 변환해주세요.
@@ -69,3 +69,72 @@ let myMapResult = myMap([1, 2, 3, 4, 5]) {
 }
 
 print("myMap: \(result)") // ["1", "2", "3", "4", "5"]
+
+
+
+// MARK: - 필수문제 3
+//- [ ]  Int 배열의 짝수번째 요소를 제거해서 반환하는 함수 `a` 를 작성해주세요.
+func a (_ arr: [Int]) -> [Int] {
+    var array = [Int]()
+    for i in arr.indices {
+        if (i+1) % 2 == 0 { continue }
+        array.append(arr[i])
+    }
+    return array
+}
+let arrA = [1, 2, 3, 4, 5]
+print(a(arrA))
+
+//- [ ]  String 배열의 짝수번째 요소를 제거해서 반환하는 함수 `b` 를 작성해주세요.
+func b (_ arr: [String]) -> [String] {
+    var array = [String]()
+    for i in arr.indices {
+        if (i+1) % 2 == 0 { continue }
+        array.append(arr[i])
+    }
+    return array
+}
+let arrB = ["가", "나", "다", "라", "마"]
+print(b(arrB))
+
+//- [ ]  위 두 함수를 하나의 함수로 대체할 수 있는 방법을 고민해보고, 함수 `c` 로 작성해주세요.
+func c<T> (_ arr: [T]) -> [T] {
+    var array = [T]()
+    for i in arr.indices {
+        if (i+1) % 2 == 0 { continue }
+        array.append(arr[i])
+    }
+    return array
+}
+let arrC1 = [1, 2, 3, 4, 5]
+let arrC2 = ["가", "나", "다", "라", "마"]
+print(c(arrC1))
+print(c(arrC2))
+
+//- [ ]  함수 `c` 에  Numbers 프로토콜 요소를 가진 배열만 사용할 수 있는 함수 `d` 를 작성해주세요.
+protocol Numbers {
+    var firstElement: Int { get set }
+}
+
+func d<T: Numbers> (_ arr: [T]) -> [T] {
+    var array = [T]()
+    for i in arr.indices {
+        if (i+1) % 2 == 0 { continue }
+        array.append(arr[i])
+    }
+    return array
+}
+
+struct D: Numbers {
+    var firstElement: Int
+}
+
+var d1 = D(firstElement: 1)
+var d2 = D(firstElement: 2)
+var d3 = D(firstElement: 3)
+var d4 = D(firstElement: 4)
+var d5 = D(firstElement: 5)
+
+var arrD = [d1, d2, d3, d4, d5]
+print(d(arrD))
+
