@@ -1,3 +1,8 @@
+/*
+ - Base Class Car 정의
+ - 브랜드, 모델, 연식, 엔진 4가지 상태 정의
+ - 주행, 정차, 공급 3가지 동작 정의
+ */
 class Car {
     let brand: String
     let model: String

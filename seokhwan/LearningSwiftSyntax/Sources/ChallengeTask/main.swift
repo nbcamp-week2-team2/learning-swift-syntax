@@ -1,10 +1,12 @@
+// MARK: - ElectricCar
 print("=== ElectricCar ===")
 let tesla = ElectricCar(brand: "Tesla", model: "Model S", year: "2025", engine: ElectricEngine())
 tesla.drive()
 tesla.stop()
 tesla.supply()
 
-print("=== HybridCar ===")
+// MARK: - HybridCar
+print("\n=== HybridCar ===")
 let toyota = HybridCar(brand: "Toyota", model: "Prius", year: "2025", engine: HydrogenEngine())
 toyota.drive()
 toyota.stop()
@@ -12,9 +14,8 @@ toyota.supply()
 toyota.switchEngine(to: ElectricEngine())
 toyota.supply()
 
+// MARK: - Inheritance와 Protocol 비교
 /*
- ## Inheritance와 Protocol 비교
-
  ## Inheritance
  ### 장점
  - 부모 클래스와 중복되는 프로퍼티와 메서드는 그대로 사용할 수 있기때문에, 코드를 재사용할 수 있음
