@@ -14,7 +14,7 @@ import Foundation
 //- [ ]  sum을 호출하는 코드를 작성해주세요. (파라미터로 전달하는 값은 임의로 선택)
 //- [ ]  위에서 정의한 sum과 동일한 타입의 클로저를 파라미터로 받고, 반환 값이 없는(void) 함수 calculate를 작성해주세요.
 //1. (조건) calculate 함수 구현 내에서는 파라미터로 전달받은 클로저를 호출하는 코드를 포함해야합니다.
-
+print("< 필수 문제 1 >")
 let sum: (Int, Int) -> String = {
     return "두 수의 합은 \($0 + $1)입니다."
 }
@@ -30,6 +30,7 @@ calculate(sum)
 
 
 // MARK: - 필수문제 2
+print("\n< 필수 문제 2 >")
 let numbers = [1, 2, 3, 4, 5]
 
 //아래 forEach 문을 map 을 사용하는 코드로 변환해주세요.
@@ -73,6 +74,7 @@ print("myMap: \(result)") // ["1", "2", "3", "4", "5"]
 
 
 // MARK: - 필수문제 3
+print("\n < 필수 문제 3 >")
 //- [ ]  Int 배열의 짝수번째 요소를 제거해서 반환하는 함수 `a` 를 작성해주세요.
 func a (_ arr: [Int]) -> [Int] {
     var array = [Int]()
@@ -136,6 +138,7 @@ func d<T: Numeric> (_ arr: [T]) -> [T] {
 //- 동작 예시) “Car 주행 중…”  출력
 //- 추가하고 싶은 상태와 동작은 마음껏 추가해주세요.
 //- stop(), charge(), refuel() 등..
+print("\n< 도전 문제 1 >")
 
 protocol Engine {
     func drive()
@@ -189,7 +192,7 @@ class ElectricCar: Car {
             brand: brand,
             model: model,
             year: year,
-            engine: ElectricEngine()
+            engine: engine
         )
     }
     
@@ -220,7 +223,7 @@ class HybridCar: Car {
             brand: brand,
             model: model,
             year: year,
-            engine: HybridEngine()
+            engine: engine
         )
     }
     
@@ -237,9 +240,10 @@ let hybridCar = HybridCar(
     year: "2025",
     engine: HybridEngine()
 )
-hybridCar.drive()
-hybridCar.switchEngine(to: ElectricEngine())
-hybridCar.drive()
+hybridCar.engine.drive()
+let electricEngine = ElectricEngine()
+hybridCar.switchEngine(to: electricEngine)
+hybridCar.engine.drive()
 print(hybridCar.engine)
 
 
