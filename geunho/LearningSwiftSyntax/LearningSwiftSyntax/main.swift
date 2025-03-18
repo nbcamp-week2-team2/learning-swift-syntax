@@ -124,3 +124,120 @@ func d<T: Numeric> (_ arr: [T]) -> [T] {
 
 
 
+// MARK: - 도전문제 1
+//- [ ]  Base Class `Car` 를 설계해주세요.
+//- 4가지의 상태를 정의해주세요.
+//- 브랜드, 모델, 연식
+//- 모두 String 타입입니다.
+//- 엔진
+//- Engine 이라는 커스텀 타입으로 정의해주세요.
+//- 1개의 동작을 정의해주세요.
+//- 운전하기
+//- 동작 예시) “Car 주행 중…”  출력
+//- 추가하고 싶은 상태와 동작은 마음껏 추가해주세요.
+//- stop(), charge(), refuel() 등..
+
+protocol Engine {
+    func drive()
+    func stop()
+}
+
+class Car {
+    var brand: String
+    var model: String
+    var year: String
+    var engine: Engine
+    
+    init(brand: String, model: String, year: String, engine: Engine) {
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.engine = engine
+    }
+    
+    func drive() {
+        print("Car 주행 중...")
+    }
+    
+    func stop() {
+        print("Car 정지")
+    }
+    
+    func refuel() {
+        print("기름을 다 채웠습니다.")
+    }
+}
+
+
+//- [ ]  `Car` 를 상속한 `ElectricCar` 를 설계해주세요.
+//- ElectricEngine 타입의 Engine 을 사용해야합니다.
+struct ElectricEngine: Engine {
+    func drive() {
+        print("ElectricCar 주행 중...")
+    }
+
+    func stop() {
+        print("ElectricCar 정지")
+    }
+    
+}
+
+class ElectricCar: Car {
+    
+    init(brand: String, model: String, year: String, engine: ElectricEngine) {
+        super.init(
+            brand: brand,
+            model: model,
+            year: year,
+            engine: ElectricEngine()
+        )
+    }
+    
+    func charge() {
+       print("충전이 완료되었습니다.")
+    }
+}
+
+//- [ ]  `Car` 를 상속한 `HybridCar` 를 설계해주세요.
+//- 새로운 엔진 타입 `HydrogenEngine` 을 정의해주세요.
+//- HybridCar 에는 기존 Car 에 없던 새로운 동작이 추가됩니다.
+//- 엔진을 런타임에 바꿀 수 있는 `switchEngine(to:)` 입니다.
+struct HybridEngine: Engine {
+    func drive() {
+        print("HybridCar 주행 중...")
+    }
+    
+    func stop() {
+        print("HybridCar 정지")
+    }
+    
+}
+
+class HybridCar: Car {
+    
+    init(brand: String, model: String, year: String, engine: HybridEngine) {
+        super.init(
+            brand: brand,
+            model: model,
+            year: year,
+            engine: HybridEngine()
+        )
+    }
+    
+    func switchEngine(to newEngine: Engine) {
+        engine = newEngine
+        print("엔진이 바꼈습니다.")
+    }
+}
+
+//- [ ]  `HybridCar` 인스턴스를 생성하고, `switchEngine(to:)` 를 호출하여 서로 다른 타입의 엔진으로 교체하는 코드를 작성해주세요.
+let hybridCar = HybridCar(
+    brand: "A",
+    model: "Ailo",
+    year: "2025",
+    engine: HybridEngine()
+)
+hybridCar.drive()
+hybridCar.switchEngine(to: ElectricEngine())
+hybridCar.drive()
+print(hybridCar.engine)
