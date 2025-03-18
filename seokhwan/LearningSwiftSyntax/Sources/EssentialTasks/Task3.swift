@@ -32,7 +32,7 @@ func c<Element>(_ input: [Element]) -> [Element] {
 }
 
 /*
- 함수 c에 Numbers 프로토콜 요소를 가진 배열만 사용할 수 있는 함수 d 작성
+ 함수 c에 Numeric 프로토콜 요소를 가진 배열만 사용할 수 있는 함수 d 작성
  */
 func d<Element: Numeric>(_ input: [Element]) -> [Element] {
     let output = input.enumerated()
