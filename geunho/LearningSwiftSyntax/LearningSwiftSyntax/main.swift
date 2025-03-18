@@ -111,12 +111,8 @@ let arrC2 = ["가", "나", "다", "라", "마"]
 print(c(arrC1))
 print(c(arrC2))
 
-//- [ ]  함수 `c` 에  Numbers 프로토콜 요소를 가진 배열만 사용할 수 있는 함수 `d` 를 작성해주세요.
-protocol Numbers {
-    var firstElement: Int { get set }
-}
-
-func d<T: Numbers> (_ arr: [T]) -> [T] {
+//- [ ]  함수 `c` 에  Numeric 프로토콜 요소를 가진 배열만 사용할 수 있는 함수 `d` 를 작성해주세요.
+func d<T: Numeric> (_ arr: [T]) -> [T] {
     var array = [T]()
     for i in arr.indices {
         if (i+1) % 2 == 0 { continue }
@@ -125,16 +121,6 @@ func d<T: Numbers> (_ arr: [T]) -> [T] {
     return array
 }
 
-struct D: Numbers {
-    var firstElement: Int
-}
 
-var d1 = D(firstElement: 1)
-var d2 = D(firstElement: 2)
-var d3 = D(firstElement: 3)
-var d4 = D(firstElement: 4)
-var d5 = D(firstElement: 5)
 
-var arrD = [d1, d2, d3, d4, d5]
-print(d(arrD))
 
