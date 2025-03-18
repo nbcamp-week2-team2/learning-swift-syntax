@@ -2,9 +2,9 @@ class Car {
     let brand: String
     let model: String
     let year: String
-    var engine: EngineProtocol
+    var engine: Engine
 
-    init(brand: String, model: String, year: String, engine: EngineProtocol) {
+    init(brand: String, model: String, year: String, engine: Engine) {
         self.brand = brand
         self.model = model
         self.year = year

@@ -11,7 +11,7 @@ final class HybridCar: Car {
         print("HybridCar 정차")
     }
 
-    func switchEngine(to engine: EngineProtocol) {
+    func switchEngine(to engine: Engine) {
         self.engine = engine
         print("\(type(of: engine))으로 교체")
     }

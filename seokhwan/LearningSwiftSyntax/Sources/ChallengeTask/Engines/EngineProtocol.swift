@@ -1,3 +1,0 @@
-protocol EngineProtocol {
-    func supply()
-}
