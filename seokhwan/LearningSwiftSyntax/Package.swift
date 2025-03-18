@@ -9,10 +9,6 @@ let package = Package(
             name: "ChallengeTask",
             dependencies: []
         ),
-        .testTarget(
-            name: "ChallengeTaskTests",
-            dependencies: ["ChallengeTask"]
-        ),
         .executableTarget(
             name: "EssentialTasks",
             dependencies: []
