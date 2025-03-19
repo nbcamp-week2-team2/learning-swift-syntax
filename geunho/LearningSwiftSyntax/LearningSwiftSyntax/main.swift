@@ -59,8 +59,8 @@ print(output)
 //[String]
 func myMap(_ arr: [Int], _ closure: (Int) -> String) -> String {
     var mapped = String()
-    for elem in arr {
-        mapped.append(closure(elem))
+    for element in arr {
+        mapped.append(closure(element))
     }
     return mapped
 }
