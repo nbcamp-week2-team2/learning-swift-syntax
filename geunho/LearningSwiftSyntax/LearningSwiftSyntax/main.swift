@@ -87,6 +87,13 @@ func a (_ arr: [Int]) -> [Int] {
 let arrA = [1, 2, 3, 4, 5]
 print(a(arrA))
 
+// .filter
+func aWithFilter (_ arr: [Int]) -> [Int] {
+    let array = arr.filter { $0 % 2 == 1 }
+    return array
+}
+print("withFilter: \(aWithFilter(arrA))")
+
 //- [ ]  String 배열의 짝수번째 요소를 제거해서 반환하는 함수 `b` 를 작성해주세요.
 func b (_ arr: [String]) -> [String] {
     var array = [String]()
