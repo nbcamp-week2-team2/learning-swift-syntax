@@ -165,15 +165,15 @@ class Car {
         self.engine = engine
     }
     
-    func drive() {
-        print("Car 주행 중...")
+    private func drive() {
+        print("주행 중...")
     }
     
-    func stop() {
-        print("Car 정지")
+    private func stop() {
+        print("정지")
     }
     
-    func refuel() {
+    private func refuel() {
         print("기름을 다 채웠습니다.")
     }
 }
