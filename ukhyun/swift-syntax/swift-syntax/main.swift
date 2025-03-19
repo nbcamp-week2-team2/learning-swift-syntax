@@ -98,3 +98,14 @@ let testArray5 =  [1,2,3,4,5]
 
 print(d(testArray5))
 
+// MARK: - 도전 1번
+
+let hybricCar = HybridCar(brand: "Lexus", model: "es300h", modelYear: "2025", engine: HydrogenEngine())
+
+hybricCar.switchEngine(to: ElectricEngine())
+hybricCar.regenerativeBreak()
+
+let electricCar = ElectricCar(brand: "Tesla", model: "Cyber Truck", modelYear: "2023", engine: ElectricEngine())
+
+electricCar.charge()
+
