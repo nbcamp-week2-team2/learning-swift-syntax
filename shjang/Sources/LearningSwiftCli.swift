@@ -11,10 +11,13 @@ struct LearningSwiftCli: ParsableCommand {
 
 extension LearningSwiftCli {
     struct Closure: ParsableCommand {
-        @Argument(help: "Closure - Args must be Int")
+        @Argument(help: "Closure - Args must be Int, and two integer is allowed")
         var args: [Int]
         static let configuration = CommandConfiguration(commandName: "closure")
         func run() throws {
+            if args.count < 1 || args.count > 2 {
+                print("Arguments must be two integers")
+            }
             closure(arr: args)
         }
     }
@@ -58,12 +61,12 @@ extension LearningSwiftCli {
 
 func closure(arr: [Int]) {
     let sum:(Int, Int) -> String = { return String("Total Sum: \($0) + \($1)") }
-    let result = sum(5, 6)
+    let result = sum(arr[0], arr[1])
     print("Result of Closure  : \(result)\n")
         
     print("Function Signature : calculate (_ op: (Int, Int) -> String ) ")
     func calculate(_ op: (Int, Int) -> String) {
-        print("Result of calculate: \(op(8, 9))\n")
+        print("Result of calculate: \(op(arr[0], arr[1]))\n")
     }
     calculate(sum)
 }
