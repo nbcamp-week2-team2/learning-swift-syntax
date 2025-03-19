@@ -7,6 +7,9 @@
 
 import Foundation
 
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let words = ["가", "나", "다", "라", "마"]
+
 // MARK: - 필수 1번
 
 // 두 개의 Int 값을 파라미터로 받고, 하나의 String 값을 반환하는 클로저
@@ -29,13 +32,11 @@ calculate(sum)
 // MARK: - 필수 2번
 
 // map 을 사용하는 코드로 변환
-let numbers = [1, 2, 3, 4, 5]
 let result = numbers.map { String($0) }
 print(result)
 
 // 주어진 입력값을 고차함수를 체이닝하여 주어진 출력값이 나오도록 구현
-let input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-let output = input.filter { $0 % 2 == 0 }.map { String($0) }
+let output = numbers.filter { $0 % 2 == 0 }.map { String($0) }
 
 print(output)
 
@@ -61,8 +62,7 @@ func a(_ array: [Int]) -> [Int] {
     return array.filter { $0 % 2 == 1 }.map { $0 }
 }
 
-let testArray = [1, 2, 3, 4, 5]
-print(a(testArray))
+print(a(numbers))
 
 // String 배열의 짝수번째 요소를 제거해서 반환하는 함수 b 를 작성
 
@@ -71,8 +71,7 @@ func b(_ array: [String]) -> [String] {
     return array.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
 }
 
-let testArray2 = ["가", "나", "다", "라", "마"]
-print(b(testArray2))
+print(b(words))
 
 
 // 두 함수를 하나의 함수로 대체할 수 있는 방법을 고민해보고, 함수 c 로 작성
@@ -82,10 +81,7 @@ func c<T>(_ array: [T]) -> [T] {
     return array.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
 }
 
-let testArray3 = [1,2,3,4,5]
-let testArray4 = ["가", "나", "다", "라", "마"]
-
-print(c(testArray3), c(testArray4))
+print(c(numbers), c(words))
 
 // 함수 c 를 기반으로 수정하여 함수 d 를 작성 -> 파라미터의 타입을 << 'Numeric 프로토콜'을 준수하는 타입의 요소를 가진 배열 >> 로 변경
 
@@ -94,9 +90,7 @@ func d<Element: Numeric>(_ array: [Element]) -> [Element] {
     return array.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
 }
 
-let testArray5 =  [1,2,3,4,5]
-
-print(d(testArray5))
+print(d(numbers))
 
 // MARK: - 도전 1번
 
