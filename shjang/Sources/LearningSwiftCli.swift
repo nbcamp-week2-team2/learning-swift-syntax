@@ -1,15 +1,16 @@
 import ArgumentParser
 
 @main
-struct LearningSwiftCli: ParsableCommand {
+struct LearningSwiftCLI: ParsableCommand {
     static let configuration = CommandConfiguration(
         abstract: "Swift Learning",
+        usage: "LearningSwiftCLI <subcommands> <args>",
         subcommands: [Closure.self, MapUsage.self, ArrayComprehension.self,
                       ClassImpl.self]
     )
 }
 
-extension LearningSwiftCli {
+extension LearningSwiftCLI {
     struct Closure: ParsableCommand {
         @Argument(help: "Closure - Args must be Int, and two integer is allowed")
         var args: [Int]
@@ -23,7 +24,7 @@ extension LearningSwiftCli {
     }
 }
 
-extension LearningSwiftCli {
+extension LearningSwiftCLI {
     struct MapUsage: ParsableCommand {
         static let configuration = CommandConfiguration(commandName: "map")
         @Argument(help: "Map - Args must be Int")
@@ -34,7 +35,7 @@ extension LearningSwiftCli {
     }
 }
 
-extension LearningSwiftCli {
+extension LearningSwiftCLI {
     struct ArrayComprehension: ParsableCommand {
         static let configuration = CommandConfiguration(commandName: "arr")
         @Argument(help: "Arr - Args must be String or Int")
@@ -50,7 +51,7 @@ extension LearningSwiftCli {
     }
 }
 
-extension LearningSwiftCli {
+extension LearningSwiftCLI {
     struct ClassImpl: ParsableCommand {
         static let configuration = CommandConfiguration(commandName: "class")
         func run() throws {
