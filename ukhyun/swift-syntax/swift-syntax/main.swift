@@ -52,3 +52,49 @@ func myMap(_ array: [Int], conversion: (Int) -> String) -> [String] {
 
 let customMap = myMap([1,2,3,4,5]) { String($0) }
 print(customMap)
+
+// MARK: - 필수 3번
+
+// Int 배열의 짝수번째 요소를 제거해서 반환하는 함수 a 를 작성
+
+func a(_ array: [Int]) -> [Int] {
+    return array.filter { $0 % 2 == 1 }.map { $0 }
+}
+
+let testArray = [1, 2, 3, 4, 5]
+print(a(testArray))
+
+// String 배열의 짝수번째 요소를 제거해서 반환하는 함수 b 를 작성
+
+func b(_ array: [String]) -> [String] {
+    
+    return array.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
+}
+
+let testArray2 = ["가", "나", "다", "라", "마"]
+print(b(testArray2))
+
+
+// 두 함수를 하나의 함수로 대체할 수 있는 방법을 고민해보고, 함수 c 로 작성
+
+// 모든 타입 가능
+func c<T>(_ array: [T]) -> [T] {
+    return array.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
+}
+
+let testArray3 = [1,2,3,4,5]
+let testArray4 = ["가", "나", "다", "라", "마"]
+
+print(c(testArray3), c(testArray4))
+
+// 함수 c 를 기반으로 수정하여 함수 d 를 작성 -> 파라미터의 타입을 << 'Numeric 프로토콜'을 준수하는 타입의 요소를 가진 배열 >> 로 변경
+
+// Numeric(숫자) 타입만 가능 : https://developer.apple.com/documentation/swift/numeric
+func d<Element: Numeric>(_ array: [Element]) -> [Element] {
+    return array.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
+}
+
+let testArray5 =  [1,2,3,4,5]
+
+print(d(testArray5))
+
