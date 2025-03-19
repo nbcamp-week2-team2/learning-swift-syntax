@@ -52,20 +52,24 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "--input 1"
+            argument = "closure 1 2"
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--input 2"
+            argument = "map 1 2 3 4 5"
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--input 3"
+            argument = "arr 1 2 3 4 5 6 7"
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--input 4"
+            argument = "class "
             isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "arr A B C D E F"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>
