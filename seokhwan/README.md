@@ -85,14 +85,16 @@ cd learning-swift-syntax/seokhwan/LearningSwiftSyntax
 ### 기타사항
 
 - [x] TIL에 트러블 슈팅 과정 기록
-- [ ] 코드리뷰 진행
+- [x] 코드리뷰 진행
 - [x] 디렉터리 및 파일 분리(+모듈화)
 - [x] 네이밍 직관적이고 이해하기 쉽게 작성
 - [x] 주석 활용해 코드 설명
 - [x] Readme.md 작성
 - [ ] 2가지 이상의 예외처리 구현
 - [x] 컨벤션을 준수한 커밋 10회 이상
+- [ ] UX 고민
 
-## 💡 Trouble Shooting
+## 💡 Blog Posts
 
-- [print()도 테스트할 수 있을까?](https://youseokhwan.me/blog/intercept-stdout-string/)
+- Trouble Shooting: [print()도 테스트할 수 있을까?](https://youseokhwan.me/blog/intercept-stdout-string/)
+- Learning: [@escaping 클로저 이해하기](https://youseokhwan.me/blog/escaping-closure/)
