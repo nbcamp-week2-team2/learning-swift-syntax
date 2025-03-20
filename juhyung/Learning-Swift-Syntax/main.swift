@@ -8,21 +8,21 @@
 import Foundation
 
 //MARK: -- 필수 문제 1
-func getIntReturnString(firstParam: Int, secondParam: Int) -> String {
-    return "두 수의 합은 {\(firstParam + secondParam)} 입니다."
+func IntReturn(firstParameter: Int, secondParameter: Int) -> String {
+    return "두 수의 합은 {\(firstParameter + secondParameter)} 입니다."
 }
 
-let sum: String = getIntReturnString(firstParam: 1, secondParam: 2)
-print(sum)
+let sum: (Int, Int) -> String = IntReturn
 
-func calculate(closerParam: (Int, Int) -> String) -> Void {
+func calculate(closerParam: (Int, Int) -> String) {
     let a: Int = 3
     let b: Int = 4
+    print(closerParam(a, b))
     
-    return print("value func calculate = \(closerParam(a, b))")
 }
 
-calculate(closerParam: getIntReturnString)
+calculate(closerParam: sum)
+
 
 //MARK: -- 필수 문제 2
 let numbers1 = [1, 2, 3, 4, 5]
@@ -190,6 +190,9 @@ class HybridCar: Car {
 }
 
 let initHybridCar = HybridCar(brand: "기아", model: "k9", since: "2024", engine: HyDrogenEngine())
+let initElectricCar = ElectricCar(brand: "기아", model: "k9", since: "2024", engine: ElectricEngine())
+
+initElectricCar.charge()
 
 
 initHybridCar.charge()
