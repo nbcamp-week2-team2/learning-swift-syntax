@@ -79,8 +79,9 @@ print("\n < 필수 문제 3 >")
 func a (_ arr: [Int]) -> [Int] {
     var array = [Int]()
     for i in arr.indices {
-        if (i+1) % 2 == 0 { continue }
-        array.append(arr[i])
+        if i % 2 == 0 {
+            array.append(arr[i])
+        }
     }
     return array
 }
@@ -91,8 +92,9 @@ print(a(arrA))
 func b (_ arr: [String]) -> [String] {
     var array = [String]()
     for i in arr.indices {
-        if (i+1) % 2 == 0 { continue }
-        array.append(arr[i])
+        if i % 2 == 0 {
+            array.append(arr[i])
+        }
     }
     return array
 }
@@ -103,8 +105,9 @@ print(b(arrB))
 func c<T> (_ arr: [T]) -> [T] {
     var array = [T]()
     for i in arr.indices {
-        if (i+1) % 2 == 0 { continue }
-        array.append(arr[i])
+        if i % 2 == 0 {
+            array.append(arr[i])
+        }
     }
     return array
 }
@@ -126,8 +129,9 @@ print("withFilter: \(cWithFilter(arrC2))")
 func d<T: Numeric> (_ arr: [T]) -> [T] {
     var array = [T]()
     for i in arr.indices {
-        if (i+1) % 2 == 0 { continue }
-        array.append(arr[i])
+        if i % 2 == 0 {
+            array.append(arr[i])
+        }
     }
     return array
 }
