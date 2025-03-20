@@ -1,7 +1,9 @@
 # 프로젝트 정보
-이 프로젝트는 Swift의 클로저, 고차함수, 제네릭 등에 대한 CLI 프로젝트입니다.
+이 프로젝트는 Swift의 클로저, 고차함수, 제네릭, OOP 설계에 대한 CLI 프로젝트입니다.
 
 ## 디렉토리 구조
+
+```bash
 ukhyun
 ├── README.md
 └── LearningSwiftSyntax
@@ -9,6 +11,7 @@ ukhyun
     └── ElectricCar.swift
     └── HybridCar.swift
     └── main.swift
+```
 
 ## 기능
 ### 필수 문제
