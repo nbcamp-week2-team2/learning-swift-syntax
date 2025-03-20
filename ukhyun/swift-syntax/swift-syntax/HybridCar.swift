@@ -8,19 +8,9 @@
 import Foundation
 
 struct HydrogenEngine: Engine {
-    func drive() {
-        print("Hybrid Car 주행 중 ...")
-    }
-    
     func stop() {
         print("Hybrid Car 정차")
     }
-    
-    func accelerate() {
-        print("Hybrid Car 가속 중 ...")
-    }
-    
-    
 }
 
 class HybridCar: Car {
@@ -29,13 +19,17 @@ class HybridCar: Car {
         super.init(brand: brand, model: model, modelYear: modelYear, engine: engine)
     }
     
+    override func accelerate() {
+        print("HybridCar 가속 중 ...")
+    }
+    
     func regenerativeBreak() {
-        print("회생 제동 중 ...")
+        print("HybridCar 회생 제동 중 ...")
     }
     
     // 엔진을 런타임에 바꿀 수 있는 switchEngine(to:)
     func switchEngine(to specificEngine: Engine) {
         self.engine = specificEngine
-        print("엔진 교체 완료")
+        print("\(type(of: engine))으로 교체")
     }
 }

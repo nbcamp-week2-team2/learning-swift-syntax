@@ -9,13 +9,19 @@ import Foundation
 
 // Engine 이라는 커스텀 타입으로 정의
 protocol Engine {
-    func drive()
     func stop()
-    func accelerate()
+}
+
+struct GasolineEngine: Engine {
+    
+    func stop() {
+        print("Gasoline Engine 정지")
+    }
+
 }
 
 // Base Class Car 를 설계
-class Car: Engine {
+class Car {
     
     let brand: String
     let model: String
@@ -29,19 +35,11 @@ class Car: Engine {
         self.engine = engine
     }
     
-    func drive() {
-        print("Car 주행 중 ...")
-    }
-    
-    func stop() {
-        print("Car 정차")
-    }
-    
     func accelerate() {
-        print("Car 가속 중 ...")
+        print("Gasoline Car 가속 중 ...")
     }
     
     func refuel() {
-        print("Car 밥 주는 중 ...")
+        print("Gasoline Car 밥 주는 중 ...")
     }
 }

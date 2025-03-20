@@ -114,10 +114,21 @@ print(d(numbers))
 
 let hybricCar = HybridCar(brand: "Lexus", model: "es300h", modelYear: "2025", engine: HydrogenEngine())
 
+print("하이브리드 차량 =====")
 hybricCar.switchEngine(to: ElectricEngine())
 hybricCar.regenerativeBreak()
+hybricCar.engine.stop()
+hybricCar.switchEngine(to: HydrogenEngine())
+hybricCar.engine.stop()
 
 let electricCar = ElectricCar(brand: "Tesla", model: "Cyber Truck", modelYear: "2023", engine: ElectricEngine())
 
+print("전기차 ====")
 electricCar.charge()
+electricCar.engine.stop()
 
+let gasolineCar = Car(brand: "Hyundai", model: "Grandeur", modelYear: "2025", engine: GasolineEngine())
+
+print("가솔린 차량 =====")
+gasolineCar.refuel()
+gasolineCar.engine.stop()
