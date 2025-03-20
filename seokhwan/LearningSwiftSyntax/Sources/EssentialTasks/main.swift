@@ -5,7 +5,7 @@ print("=== 필수 문제 1 ===")
 print("sum 호출: \(sum(3, 5))")
 
 // calculate 호출
-calculate(sum, 3, 5)
+calculate(3, 5, sum)
 
 // MARK: - 필수 문제 2
 print("\n=== 필수 문제 2 ===")

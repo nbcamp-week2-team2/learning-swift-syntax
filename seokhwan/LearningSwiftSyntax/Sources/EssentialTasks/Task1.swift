@@ -11,6 +11,6 @@ let sum: (Int, Int) -> String = { a, b in
  - 위에서 정의한 sum과 동일한 타입의 클로저를 파라미터로 받고, 반환 값이 없는(void) 함수 calcuate 작성
  - calculate 함수 내에서는 파라미터로 전달받은 클로저를 호출하는 코드 포함
  */
-func calculate(_ closure: (Int, Int) -> String, _ a: Int, _ b: Int) {
+func calculate(_ a: Int, _ b: Int, _ closure: (Int, Int) -> String) {
     print("calculate 호출: \(closure(a, b))")
 }
