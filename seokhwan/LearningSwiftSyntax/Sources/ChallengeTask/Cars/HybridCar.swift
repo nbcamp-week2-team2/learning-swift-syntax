@@ -4,7 +4,8 @@
  - 런타임에 엔진을 교체할 수 있는 switchEngine(to:) 구현
  */
 final class HybridCar: Car {
-    init(brand: String, model: String, year: String, engine: HydrogenEngine) {
+    init(brand: String, model: String, year: String) {
+        let engine = HydrogenEngine()
         super.init(brand: brand, model: model, year: year, engine: engine)
     }
 

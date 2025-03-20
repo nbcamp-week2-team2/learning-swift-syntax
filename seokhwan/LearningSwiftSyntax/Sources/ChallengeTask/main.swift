@@ -1,13 +1,13 @@
 // MARK: - ElectricCar
 print("=== ElectricCar ===")
-let tesla = ElectricCar(brand: "Tesla", model: "Model S", year: "2025", engine: ElectricEngine())
+let tesla = ElectricCar(brand: "Tesla", model: "Model S", year: "2025")
 tesla.drive()
 tesla.stop()
 tesla.supply()
 
 // MARK: - HybridCar
 print("\n=== HybridCar ===")
-let toyota = HybridCar(brand: "Toyota", model: "Prius", year: "2025", engine: HydrogenEngine())
+let toyota = HybridCar(brand: "Toyota", model: "Prius", year: "2025")
 toyota.drive()
 toyota.stop()
 toyota.supply()

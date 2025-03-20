@@ -3,7 +3,8 @@
  - ElectricEngine 타입의 Engine 사용
  */
 final class ElectricCar: Car {
-    init(brand: String, model: String, year: String, engine: ElectricEngine) {
+    init(brand: String, model: String, year: String) {
+        let engine = ElectricEngine()
         super.init(brand: brand, model: model, year: year, engine: engine)
     }
 
