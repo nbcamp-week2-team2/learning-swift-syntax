@@ -10,20 +10,34 @@ import Foundation
 
 // 상속을 사용하여 기능을 추가하는 것과, 프로토콜 채택을 통해서 기능을 추가하는 것의 장단점, 차이를 고민하고 주석으로 서술해주세요.
 /*
- 상속
-    장점 : 코드 재사용, 계층적 구조, 다형성
-    단점 : 부모 클래스의 변경이 자식 클래스에 영향을 줄 수 있음, 과한 상속 시 코드가 복잡해짐
- 프로토콜
-    장점 : 클래스 사이의 결합도를 낮춰 유연성이 높아짐, weak 키워드 사용이 가능해짐 -> 약한 참조 -> 메모리 누수 해결
-    단점 : 확장성이 줄어들 수 있다
+상속
+    장점:
+    - 코드 재사용성 향상
+    - 계층적 구조 표현에 적합
+    - 부모 클래스의 기능을 확장하기 용이함
+
+    단점:
+    - 단일 상속만 가능 (다중 상속 불가)
+    - 클래스에만 적용 가능 (구조체, 열거형 불가)
+    - 타입 간 강한 결합도 발생
+    - 상속 계층이 깊어질수록 유지보수 어려움
  
-상속 vs 프로토콜
-    차이점
-        상속 : 계층적 구조를 명확히 함, 직접 상속, 단일 상속만 가능
-        프로토콜 : 여러 프로토콜 채택 가능
+프로토콜
+    장점:
+    - 다중 채택 가능 (여러 프로토콜 동시 구현)
+    - 클래스, 구조체, 열거형 모두 적용 가능
+    - 타입 간 결합도 낮음 (유연한 설계)
+    - 프로토콜 확장으로 기본 구현 제공 가능
+    
+    단점:
+    - 기본 구현이 없으면 모든 요구사항을 직접 구현해야 함
+    - 저장 프로퍼티 정의 불가
+    - 상속보다 초기 설계가 복잡할 수 있음
+ 
+차이
+    상속: 한 클래스는 하나의 부모 클래스만 상속 가능
+    프로토콜: 프로토콜은 여러 개의 프로토콜을 동시에 상속 가능
  */
-
-
 
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let words = ["가", "나", "다", "라", "마"]
@@ -112,7 +126,7 @@ print(d(numbers))
 
 // MARK: - 도전 1번
 
-let hybricCar = HybridCar(brand: "Lexus", model: "es300h", modelYear: "2025", engine: HydrogenEngine())
+let hybricCar = HybridCar(brand: "Lexus", model: "es300h", modelYear: "2025")
 
 print("하이브리드 차량 =====")
 hybricCar.switchEngine(to: ElectricEngine())
@@ -121,7 +135,7 @@ hybricCar.engine.stop()
 hybricCar.switchEngine(to: HydrogenEngine())
 hybricCar.engine.stop()
 
-let electricCar = ElectricCar(brand: "Tesla", model: "Cyber Truck", modelYear: "2023", engine: ElectricEngine())
+let electricCar = ElectricCar(brand: "Tesla", model: "Cyber Truck", modelYear: "2023")
 
 print("전기차 ====")
 electricCar.charge()

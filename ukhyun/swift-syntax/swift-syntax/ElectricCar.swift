@@ -15,8 +15,9 @@ struct ElectricEngine: Engine {
 
 class ElectricCar: Car {
     
-    init(brand: String, model: String, modelYear: String, engine: ElectricEngine) {
-        super.init(brand: brand, model: model, modelYear: modelYear, engine: engine)
+    init(brand: String, model: String, modelYear: String) {
+        let electricEngine = ElectricEngine()
+        super.init(brand: brand, model: model, modelYear: modelYear, engine: electricEngine)
     }
     
     override func accelerate() {
