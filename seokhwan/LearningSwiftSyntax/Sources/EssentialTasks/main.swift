@@ -2,7 +2,7 @@
 print("=== 필수 문제 1 ===")
 
 // sum 호출
-print(sum(3, 5))
+print("sum 호출: \(sum(3, 5))")
 
 // calculate 호출
 calculate(sum, 3, 5)
@@ -24,7 +24,7 @@ print("\n=== 필수 문제 2 ===")
  */
 let numbers = [1, 2, 3, 4, 5]
 let result = numbers.map { "\($0)" }
-print(result)
+print("map 사용: \(result)")
 
 /*
  주어진 입력값을 고차함수를 체이닝하여 주어진 출력값이 나오도록 구현
@@ -35,28 +35,28 @@ let input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let result2 = input
     .filter { $0 % 2 == 0 }
     .map { "\($0)" }
-print(result2)
+print("고차함수 체이닝: \(result2)")
 
 // myMap 호출
 let result3 = myMap([1, 2, 3, 4, 5]) {
     String($0)
 }
-print(result3)
+print("myMap 호출: \(result3)")
 
 // MARK: - 필수 문제 3
 print("\n=== 필수 문제 3 ===")
 
 // a 호출
-print(a([1, 2, 3, 4, 5]))
+print("a: \(a([1, 2, 3, 4, 5]))")
 
 // b 호출
-print(b(["가", "나", "다", "라", "마"]))
+print("b: \(b(["가", "나", "다", "라", "마"]))")
 
 // c 호출
-print(c([1, 2, 3, 4, 5]))
-print(c(["가", "나", "다", "라", "마"]))
+print("c-1: \(c([1, 2, 3, 4, 5]))")
+print("c-2: \(c(["가", "나", "다", "라", "마"]))")
 
 // d 호출
-print(d([1, 2, 3, 4, 5]))
-print(d([1.1, 2.2, 3.3, 4.4, 5.5]))
-//print(d(["가", "나", "다", "라", "마"])) // error
+print("d-1: \(d([1, 2, 3, 4, 5]))")
+print("d-2: \(d([1.1, 2.2, 3.3, 4.4, 5.5]))")
+//print("d: \(d(["가", "나", "다", "라", "마"]))") // error

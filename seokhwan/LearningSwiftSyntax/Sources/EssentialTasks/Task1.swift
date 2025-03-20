@@ -12,5 +12,5 @@ let sum: (Int, Int) -> String = { a, b in
  - calculate 함수 내에서는 파라미터로 전달받은 클로저를 호출하는 코드 포함
  */
 func calculate(_ closure: (Int, Int) -> String, _ a: Int, _ b: Int) {
-    print(closure(a, b))
+    print("calculate 호출: \(closure(a, b))")
 }
